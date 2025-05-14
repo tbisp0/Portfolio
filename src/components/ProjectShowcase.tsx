@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Eye } from 'lucide-react';
+import ProjectCard from './ProjectCard';
 
 interface ProjectDetails {
   title: string;
@@ -16,108 +14,23 @@ interface ProjectShowcaseProps {
 }
 
 const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ projects }) => {
-  const [activeProject, setActiveProject] = useState<number | null>(null);
-  
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
     <section>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-4xl font-bold text-portfolio-blue-dark mb-2">Projetos</h2>
-        <div className="h-1 w-20 bg-portfolio-blue mb-12"></div>
-      </motion.div>
-      
+      <h2 className="text-4xl font-bold text-portfolio-blue-dark mb-2">Projetos</h2>
+      <div className="h-1 w-20 bg-portfolio-blue mb-12"></div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="project-card rounded-xl overflow-hidden"
-          >
-            {/* Project Image */}
-            <div className="relative h-56 overflow-hidden">
-              <img 
-                src={project.imageUrl} 
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-6">
-                <span className="text-white/80 text-sm font-medium">
-                  {project.category}
-                </span>
-                <h3 className="text-white text-xl font-semibold mt-1">
-                  {project.title}
-                </h3>
-              </div>
-            </div>
-            
-            {/* Project Content */}
-            <div className="p-6 bg-white">
-              <p className="text-portfolio-gray-dark mb-6">
-                🟢 <strong>Resumo:</strong> {project.summary}
-              </p>
-              
-              <button 
-                onClick={() => setActiveProject(activeProject === index ? null : index)} 
-                className="group inline-flex items-center font-medium text-portfolio-blue hover:text-portfolio-blue-dark transition-colors"
-              >
-                <Eye size={18} className="mr-2 transition-transform group-hover:scale-110 duration-300" />
-                <span>Ver mais</span>
-                <ArrowRight 
-                  size={16} 
-                  className={`ml-1.5 transition-transform duration-300 ${activeProject === index ? 'rotate-90' : 'group-hover:translate-x-1'}`} 
-                />
-              </button>
-              
-              {/* Expanded Content */}
-              <AnimatePresence>
-                {activeProject === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="mt-6 pt-6 border-t border-slate-100">
-                      <div className="space-y-6">
-                        <div>
-                          <h4 className="font-medium text-portfolio-blue-dark mb-3">Visão Geral</h4>
-                          <p className="text-portfolio-gray-dark">
-                            Este projeto aborda desafios de {project.category.toLowerCase()} com foco em soluções que melhoram a experiência e impactam métricas de negócio.
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h4 className="font-medium text-portfolio-blue-dark mb-3">Processo de UX</h4>
-                          <ul className="space-y-2">
-                            {project.details.map((detail, idx) => (
-                              <li key={idx} className="text-portfolio-gray-dark flex items-start">
-                                <span className="text-portfolio-blue mr-2">•</span>
-                                {detail}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        <div>
-                          <h4 className="font-medium text-portfolio-blue-dark mb-3">Impacto & Resultados</h4>
-                          <p className="text-portfolio-gray-dark">
-                            A implementação destas estratégias gerou impacto mensurável na usabilidade e nos indicadores de negócio, resultando em melhor engajamento dos usuários.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </motion.div>
+        {projects.map((project, idx) => (
+          <ProjectCard
+            key={project.title}
+            title={project.title}
+            category={project.category}
+            summary={project.summary}
+            details={project.details}
+            expanded={activeIndex === idx}
+            onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
+          />
         ))}
       </div>
     </section>

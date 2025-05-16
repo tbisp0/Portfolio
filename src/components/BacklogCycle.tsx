@@ -101,7 +101,7 @@ const BacklogCycle: React.FC = () => {
         className="text-center"
       >
         <h2 className="text-4xl font-bold text-portfolio-blue-dark mb-3 flex items-center justify-center gap-3">
-          <span className="text-3xl">🌀</span> Ciclo de Backlogs Estratégicos
+          <span className="text-3xl"></span> Ciclo de Backlogs Estratégicos
         </h2>
         <div className="h-1 w-20 bg-portfolio-blue mx-auto mb-6"></div>
         <p className="text-portfolio-gray-dark mb-12 max-w-3xl mx-auto">

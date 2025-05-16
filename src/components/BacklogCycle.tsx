@@ -34,6 +34,24 @@ const BacklogCycle: React.FC = () => {
       challenge: "Dificuldade dos pesquisadores em localizar recursos e publicações acadêmicas na plataforma.",
       solution: "Reestruturação da arquitetura da informação e implementação de sistema de busca avançada com filtros contextuais.",
       result: "Redução de 35% no tempo de busca e aumento significativo na satisfação dos usuários acadêmicos."
+    },
+    {
+      id: "backlog-3",
+      challenge: "Dificuldade dos pesquisadores em localizar recursos e publicações acadêmicas na plataforma.",
+      solution: "Reestruturação da arquitetura da informação e implementação de sistema de busca avançada com filtros contextuais.",
+      result: "Redução de 35% no tempo de busca e aumento significativo na satisfação dos usuários acadêmicos."
+    },
+    {
+      id: "backlog-3",
+      challenge: "Dificuldade dos pesquisadores em localizar recursos e publicações acadêmicas na plataforma.",
+      solution: "Reestruturação da arquitetura da informação e implementação de sistema de busca avançada com filtros contextuais.",
+      result: "Redução de 35% no tempo de busca e aumento significativo na satisfação dos usuários acadêmicos."
+    },
+    {
+      id: "backlog-3",
+      challenge: "Dificuldade dos pesquisadores em localizar recursos e publicações acadêmicas na plataforma.",
+      solution: "Reestruturação da arquitetura da informação e implementação de sistema de busca avançada com filtros contextuais.",
+      result: "Redução de 35% no tempo de busca e aumento significativo na satisfação dos usuários acadêmicos."
     }
   ];
 

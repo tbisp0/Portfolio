@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
             asChild
           >
             <a 
-              href="mailto:contato@tarcisiobispo.com" 
+              href="mailto:tbisp0@hotmail.com" 
               className="flex items-center gap-3"
             >
               <div className="bg-white/20 p-2 rounded-lg">
@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
             asChild
           >
             <a 
-              href="https://www.linkedin.com/" 
+              href="https://www.linkedin.com/in/tarcisiobispouxdesigner/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-3"
@@ -71,6 +71,12 @@ const Contact: React.FC = () => {
             variant="ghost"
             className="group bg-slate-50 hover:bg-slate-100 text-portfolio-gray-dark transition-colors w-full py-6 h-auto text-base rounded-xl flex items-center justify-center gap-3"
           >
+             <a 
+              href="https://drive.google.com/file/d/1NgQorqxUXbGKUaDruLfflxB4_6GhJyo8/view?usp=drive_link" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-3"
+            ></a>
             <div className="bg-slate-200 p-2 rounded-lg">
               <Download size={24} />
             </div>

@@ -154,8 +154,9 @@ const BacklogCycle: React.FC = () => {
                           <h4 className="font-semibold text-portfolio-blue-dark">Resultado</h4>
                           <p className="text-portfolio-gray-dark">{item.result}</p>
                         </div>
-                        <div className="space-y-2">
-                          <h4 className="font-semibold text-yellow-600">Nota</h4>
+                        <div className="space-y-4 border-l-2 border-portfolio-blue/30 pl-6 relative">
+                        <div className="absolute w-3 h-3 bg-portfolio-blue rounded-full -left-[7px] top-2"></div>
+                        <h4 className="font-semibold text-portfolio-blue-dark">Nota</h4>
                           <p className="text-portfolio-gray-dark">{item.note}</p>
                         </div>
                       </div>

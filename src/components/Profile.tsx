@@ -37,7 +37,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
           <div className="flex justify-center items-center mb-6 lg:mb-0 w-full">
             <div className="w-64 h-64 rounded-full border-4 border-white shadow-2xl bg-white overflow-hidden hover:scale-105 transition-transform duration-300 mx-auto">
               <img
-                src="/Portfolio/images/tarcisio_bispo.png"
+                src="images/tarcisio_bispo.png"
                 alt="Foto de Tarcisio Bispo de Araujo"
                 className="w-full h-full object-cover"
               />

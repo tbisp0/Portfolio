@@ -46,9 +46,6 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
   return (
     <section
       className="min-h-screen flex flex-col justify-center py-16 relative overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #f5f8ff 0%, #e3eafe 100%)"
-      }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         {/* Card da foto */}

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Profile from '../components/Profile';
@@ -77,7 +76,12 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 relative">
+    <div
+      className="min-h-screen w-full"
+      style={{
+        background: "linear-gradient(135deg, #f5f8ff 0%, #e3eafe 100%)"
+      }}
+    >
       {/* Hero Section with Animated Background */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(26,63,212,0.1),transparent_70%)]"></div>

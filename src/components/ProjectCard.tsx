@@ -12,15 +12,6 @@ interface ProjectCardProps {
   insights: string;
 }
 
-const sectionTitles: Record<string, string> = {
-  overview: "Visão Geral",
-  discovery: "Descoberta",
-  solution: "Solução",
-  iteration: "Iteração",
-  outcomes: "Resultados",
-  insights: "Insights",
-};
-
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title, category, overview, discovery, solution, iteration, outcomes, insights
 }) => {
@@ -42,34 +33,32 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           />
         </button>
         {expanded && (
-          <div className="mt-6 pt-6 border-t border-slate-100 space-y-6">
+          <div className="mt-4 pl-5 border-l-2 border-portfolio-blue-light animate-fade-in space-y-4">
             <div>
-              <h4 className="heading-3 mb-2">{sectionTitles.overview}</h4>
-              <p className="paragraph">{overview}</p>
+              <h4 className="font-medium">Overview</h4>
+              <p>{overview}</p>
             </div>
             <div>
-              <h4 className="heading-3 mb-2">{sectionTitles.discovery}</h4>
-              <p className="paragraph">{discovery}</p>
+              <h4 className="font-medium">Discovery</h4>
+              <p>{discovery}</p>
             </div>
             <div>
-              <h4 className="heading-3 mb-2">{sectionTitles.solution}</h4>
-              <p className="paragraph">{solution}</p>
+              <h4 className="font-medium">Solution</h4>
+              <p>{solution}</p>
             </div>
             <div>
-              <h4 className="heading-3 mb-2">{sectionTitles.iteration}</h4>
-              <p className="paragraph">{iteration}</p>
+              <h4 className="font-medium">Iteration</h4>
+              <p>{iteration}</p>
             </div>
             <div>
-              <h4 className="heading-3 mb-2">{sectionTitles.outcomes}</h4>
-              <ul className="list-disc pl-5 paragraph">
-                {Array.isArray(outcomes) ? outcomes.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                )) : null}
+              <h4 className="font-medium">Outcomes</h4>
+              <ul className="list-disc pl-5">
+                {outcomes && outcomes.map((item, idx) => <li key={idx}>{item}</li>)}
               </ul>
             </div>
             <div>
-              <h4 className="heading-3 mb-2">{sectionTitles.insights}</h4>
-              <p className="paragraph">{insights}</p>
+              <h4 className="font-medium">Insights</h4>
+              <p>{insights}</p>
             </div>
           </div>
         )}

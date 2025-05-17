@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Profile from '../components/Profile';
 import ProjectShowcase from '../components/ProjectShowcase';
@@ -76,8 +76,10 @@ const Index = () => {
     }
   ];
 
+  // Ref for scroll
   const projectsRef = useRef(null);
-
+  
+  // Scroll handler
   const scrollToProjects = () => {
     projectsRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -125,7 +127,6 @@ const Index = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            {/* Aqui garantimos que ProjectShowcase e os cards usem as classes utilitárias */}
             <ProjectShowcase projects={projects} />
           </motion.div>
         </div>

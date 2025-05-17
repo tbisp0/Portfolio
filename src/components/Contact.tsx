@@ -12,11 +12,11 @@ const Contact: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <h2 className="heading-2 mb-3 text-portfolio-blue-dark">
+        <h2 className="text-4xl font-bold text-portfolio-blue-dark mb-3">
           Vamos Trabalhar Juntos
         </h2>
         <div className="h-1 w-20 bg-portfolio-blue mx-auto mb-6"></div>
-        <p className="paragraph mb-12 max-w-2xl mx-auto text-portfolio-gray-dark">
+        <p className="text-portfolio-gray-dark mb-12 max-w-2xl mx-auto">
           Estou disponível para novos projetos e oportunidades. 
           Entre em contato para conversarmos sobre como posso ajudar a 
           transformar suas ideias em experiências digitais impactantes.

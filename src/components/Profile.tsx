@@ -5,19 +5,14 @@ import { Download, Linkedin, ArrowRight } from 'lucide-react';
 
 // Ícone do WhatsApp
 const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    {...props}
-    viewBox="0 0 32 32"
-    fill="none"
-    width={32}
-    height={32}
-    className={`w-8 h-8 ${props.className || ""}`}
-    aria-label="WhatsApp"
-  >
-    <circle cx="16" cy="16" r="16" fill="none" />
+  <svg {...props} viewBox="0 0 24 24" fill="none">
     <path
-      d="M16 6.667a9.333 9.333 0 0 0-8.13 13.973l-1.07 3.12a1 1 0 0 0 1.263 1.263l3.12-1.07A9.333 9.333 0 1 0 16 6.667Zm0 16a6.667 6.667 0 0 1-3.413-.94l-.24-.14-2.08.713.713-2.08-.14-.24A6.667 6.667 0 1 1 16 22.667Zm3.36-4.36c-.187-.093-1.107-.547-1.277-.607-.17-.06-.293-.093-.417.093-.123.187-.48.607-.587.733-.107.127-.217.14-.403.047-.187-.093-.79-.29-1.504-.924-.556-.496-.93-1.11-1.04-1.297-.11-.187-.012-.288.082-.38.084-.083.187-.217.28-.33.093-.113.124-.187.187-.31.062-.124.031-.233-.015-.327-.047-.093-.417-1.007-.573-1.38-.15-.36-.303-.312-.417-.318-.107-.007-.233-.009-.36-.009-.124 0-.327.047-.5.233-.17.187-.66.646-.66 1.577 0 .93.676 1.83.77 1.957.093.124 1.33 2.04 3.23 2.78.452.155.805.247 1.08.316.454.108.87.093 1.197.057.366-.043 1.107-.453 1.263-.89.156-.437.156-.812.11-.89-.047-.078-.17-.124-.357-.217Z"
-      fill="currentColor"
+      d="M16.7 13.6c-.3-.2-1.7-.8-2-1s-.5-.2-.7.1c-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.2-1.3-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.2-.3.3-.4.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3.1-.2 0-.4 0-.6s-.7-1.7-.9-2.3c-.2-.6-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.2-.7.7-.7 1.7 0 1 .7 2.1 1.1 2.6.4.5 2.1 2.8 5.1 3.7.7.2 1.2.3 1.6.2.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2z"
+      fill="white"
+    />
+    <path
+      d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.3C8.3 21.5 10.1 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.7 0-3.3-.4-4.7-1.2l-.3-.2-2.8.7.7-2.7-.2-.3C4.4 15.3 4 13.7 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"
+      fill="white"
     />
   </svg>
 );
@@ -30,8 +25,8 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
   return (
-    <section className="flex flex-col justify-center py-10 sm:py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center lg:items-start w-full px-4 sm:px-8">
+    <section className="min-h-screen flex flex-col justify-center py-16 relative overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center justify-center">
         {/* Card da foto */}
         <motion.div
           className="lg:col-span-4 flex flex-col items-center lg:items-start"
@@ -40,7 +35,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
           transition={{ duration: 0.8 }}
         >
           <div className="flex justify-center items-center mb-6 lg:mb-0 w-full">
-            <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full border-4 border-white shadow-2xl bg-white overflow-hidden hover:scale-105 transition-transform duration-300 mx-auto">
+            <div className="w-64 h-64 rounded-full border-4 border-white shadow-2xl bg-white overflow-hidden hover:scale-105 transition-transform duration-300 mx-auto">
               <img
                 src="/portfolio/images/tarcisio_bispo.png"
                 alt="Foto de Tarcisio Bispo de Araujo"
@@ -52,15 +47,12 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
 
         {/* Bio Section */}
         <motion.div
-          className="lg:col-span-8 flex flex-col max-w-3xl"
+          className="lg:col-span-8 flex flex-col"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1
-            className="heading-1 mb-2 text-balance"
-            style={{ color: "var(--color-primary)" }}
-          >
+          <h1 className="text-5xl md:text-6xl font-bold mb-3 leading-tight" style={{ color: "var(--color-primary)" }}>
             {name}
           </h1>
           <motion.div
@@ -70,52 +62,50 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
             className="h-1.5 mb-6 rounded"
             style={{ background: "var(--color-secondary)" }}
           ></motion.div>
-          <h2 className="heading-2 mb-8" style={{ color: "var(--color-secondary)" }}>
+          <h2 className="text-2xl md:text-3xl mb-8 font-semibold" style={{ color: "var(--color-secondary)" }}>
             {title}
           </h2>
-          <p className="paragraph mb-10" style={{ color: "var(--color-muted)" }}>
+          <p className="leading-relaxed mb-10 max-w-3xl text-lg md:text-xl" style={{ color: "var(--color-muted)" }}>
             {bio}
           </p>
           {/* Botões */}
-          <div className="flex flex-nowrap flex-row gap-4 sm:gap-6 mb-16 overflow-x-auto">
+          <div className="flex flex-wrap gap-6">
             <Button
               style={{ backgroundColor: "#25D366" }}
-              className="group text-white hover:bg-[#1ebe5d] transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg items-center"
+              className="group text-white hover:bg-[#1ebe5d] transition-all duration-300 rounded-full pl-7 pr-6 py-4 text-lg"
               asChild
             >
-              <a href="https://wa.me/19990137380" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                <WhatsAppIcon className="mr-3" width={28} height={28} />
+              <a href="https://wa.me/19990137380" target="_blank" rel="noopener noreferrer">
+                <WhatsAppIcon className="mr-3 w-8 h-8" /> {/* Aumentado para w-8 h-8 */}
                 <span>Vamos Conversar</span>
-                <ArrowRight size={24} className="ml-2 sm:size-7 transition-transform group-hover:translate-x-1 duration-300" />
+                <ArrowRight size={28} className="ml-2 transition-transform group-hover:translate-x-1 duration-300" /> {/* Aumentado para 28 */}
               </a>
             </Button>
             <Button
               variant="default"
-              className="group bg-portfolio-blue hover:bg-portfolio-blue-dark text-white transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg items-center"
+              className="group bg-portfolio-blue hover:bg-portfolio-blue-dark text-white transition-all duration-300 rounded-full pl-7 pr-6 py-4 text-lg"
               asChild
             >
               <a
                 href="https://drive.google.com/file/d/1NgQorqxUXbGKUaDruLfflxB4_6GhJyo8/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center"
               >
-                <Download size={24} className="mr-3 w-7 h-7 sm:w-8 sm:h-8" />
+                <Download size={28} className="mr-3 w-8 h-8" />
                 <span>Download CV</span>
               </a>
             </Button>
             <Button
               variant="ghost"
-              className="group bg-transparent hover:bg-portfolio-blue/10 text-portfolio-blue transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg items-center"
+              className="group bg-transparent hover:bg-portfolio-blue/10 text-portfolio-blue transition-all duration-300 rounded-full pl-7 pr-6 py-4 text-lg"
               asChild
             >
-              <a href="https://www.linkedin.com/in/tarcisiobispouxdesigner/" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                <Linkedin size={24} className="mr-3 w-7 h-7 sm:w-8 sm:h-8" />
+              <a href="https://www.linkedin.com/in/tarcisiobispouxdesigner/" target="_blank" rel="noopener noreferrer">
+                <Linkedin size={28} className="mr-3 w-8 h-8" />
                 <span>LinkedIn</span>
               </a>
             </Button>
           </div>
-          {/* Links extras, se houver */}
         </motion.div>
       </div>
     </section>

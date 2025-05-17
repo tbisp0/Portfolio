@@ -32,14 +32,14 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ projects }) => {
         <div className="h-1 w-20 bg-portfolio-blue mb-12"></div>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         {projects.map((project, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="project-card rounded-xl overflow-hidden"
+            className="project-card rounded-xl overflow-hidden self-start"
           >
             {/* Project Image */}
             <div className="relative h-56 overflow-hidden">

@@ -47,7 +47,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
     <section
       className="min-h-screen flex flex-col justify-center py-16 relative overflow-hidden"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center justify-center">
         {/* Card da foto */}
         <motion.div 
           className="lg:col-span-4 flex flex-col items-center lg:items-start"
@@ -55,8 +55,8 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="w-64 h-64 rounded-full border-4 border-white shadow-2xl bg-white overflow-hidden hover:scale-105 transition-transform duration-300">
+          <div className="flex justify-center items-center mb-6 lg:mb-0 w-full">
+            <div className="w-64 h-64 rounded-full border-4 border-white shadow-2xl bg-white overflow-hidden hover:scale-105 transition-transform duration-300 mx-auto">
               <img
                 src="/images/tarcisio_bispo.png"
                 alt="Foto de Tarcisio Bispo de Araujo"

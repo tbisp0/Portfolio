@@ -47,7 +47,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
               `}
             >
               <img
-                src="/images/tarcisio_bispo.png"
+                src="public/images/tarcisio_bispo.png"
                 alt="Foto de Tarcisio Bispo de Araujo"
                 className="w-full h-full object-cover rounded-2xl"
               />
@@ -83,8 +83,22 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
           
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4">
-            <Button 
-              variant="default" 
+            {/* Botão WhatsApp */}
+            <Button
+              style={{ backgroundColor: "#25D366" }}
+              className="group text-white hover:bg-[#1ebe5d] transition-all duration-300 rounded-full pl-6 pr-5 border-none"
+              asChild
+            >
+              <a href="https://wa.me/19990137380" target="_blank" rel="noopener noreferrer">
+                <WhatsAppIcon className="mr-2 w-5 h-5" />
+                <span>Vamos Conversar</span>
+                <ArrowRight size={16} className="ml-1.5 transition-transform group-hover:translate-x-1 duration-300" />
+              </a>
+            </Button>
+
+            {/* Botão Download CV */}
+            <Button
+              variant="default"
               className="group bg-portfolio-blue hover:bg-portfolio-blue-dark text-white transition-all duration-300 rounded-full pl-6 pr-5"
               asChild
             >
@@ -98,20 +112,9 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
               </a>
             </Button>
 
-            <Button 
-              variant="outline" 
-              className="group border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue hover:text-white transition-all duration-300 rounded-full pl-6 pr-5"
-              asChild
-            >
-              <a href="https://wa.me/19990137380" target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="mr-2 w-5 h-5" />
-                <span>Vamos Conversar</span>
-                <ArrowRight size={16} className="ml-1.5 transition-transform group-hover:translate-x-1 duration-300" />
-              </a>
-            </Button>
-
-            <Button 
-              variant="ghost" 
+            {/* Botão LinkedIn */}
+            <Button
+              variant="ghost"
               className="group bg-transparent hover:bg-portfolio-blue/10 text-portfolio-blue transition-all duration-300 rounded-full"
               asChild
             >

@@ -139,9 +139,7 @@ const BacklogCycle: React.FC = () => {
                           </svg>
                         </div>
                         <div>
-                          <h3 className="heading-3 pr-8 group-hover:text-portfolio-blue transition-colors">
-                            {item.challenge}
-                          </h3>
+                          <h3 className="heading-3">{item.challenge}</h3>
                         </div>
                       </div>
                     </AccordionTrigger>

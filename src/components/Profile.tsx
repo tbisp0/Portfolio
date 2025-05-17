@@ -31,7 +31,7 @@ interface ProfileProps {
 const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
   return (
     <section className="flex flex-col justify-center py-10 sm:py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start w-full px-4 sm:px-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center lg:items-start w-full px-4 sm:px-8">
         {/* Card da foto */}
         <motion.div
           className="lg:col-span-4 flex flex-col items-center lg:items-start"
@@ -52,13 +52,13 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
 
         {/* Bio Section */}
         <motion.div
-          className="lg:col-span-8 flex flex-col"
+          className="lg:col-span-8 flex flex-col max-w-3xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h1
-            className="heading-1"
+            className="heading-1 mb-2 text-balance"
             style={{ color: "var(--color-primary)" }}
           >
             {name}
@@ -70,40 +70,35 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
             className="h-1.5 mb-6 rounded"
             style={{ background: "var(--color-secondary)" }}
           ></motion.div>
-          <h2
-            className="heading-2 mb-8"
-            style={{ color: "var(--color-secondary)" }}
-          >
+          <h2 className="heading-2 mb-8" style={{ color: "var(--color-secondary)" }}>
             {title}
           </h2>
-          <p
-            className="paragraph mb-10"
-            style={{ color: "var(--color-muted)" }}
-          >
+          <p className="paragraph mb-10" style={{ color: "var(--color-muted)" }}>
             {bio}
           </p>
           {/* Botões */}
-          <div className="flex flex-wrap gap-4 sm:gap-6">
+          <div className="flex flex-nowrap flex-row gap-4 sm:gap-6 mb-16 overflow-x-auto">
             <Button
               style={{ backgroundColor: "#25D366" }}
-              className="group text-white hover:bg-[#1ebe5d] transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg"
+              className="group text-white hover:bg-[#1ebe5d] transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg items-center"
               asChild
             >
-              <a href="https://wa.me/19990137380" target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="mr-3 w-7 h-7 sm:w-8 sm:h-8" />
+              <a href="https://wa.me/19990137380" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <WhatsAppIcon className="mr-3" width={28} height={28} />
                 <span>Vamos Conversar</span>
                 <ArrowRight size={24} className="ml-2 sm:size-7 transition-transform group-hover:translate-x-1 duration-300" />
               </a>
             </Button>
             <Button
               variant="default"
-              className="group bg-portfolio-blue hover:bg-portfolio-blue-dark text-white transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg"
+              className="group bg-portfolio-blue hover:bg-portfolio-blue-dark text-white transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg items-center"
               asChild
             >
               <a
                 href="https://drive.google.com/file/d/1NgQorqxUXbGKUaDruLfflxB4_6GhJyo8/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center"
               >
                 <Download size={24} className="mr-3 w-7 h-7 sm:w-8 sm:h-8" />
                 <span>Download CV</span>
@@ -111,15 +106,16 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
             </Button>
             <Button
               variant="ghost"
-              className="group bg-transparent hover:bg-portfolio-blue/10 text-portfolio-blue transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg"
+              className="group bg-transparent hover:bg-portfolio-blue/10 text-portfolio-blue transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg items-center"
               asChild
             >
-              <a href="https://www.linkedin.com/in/tarcisiobispouxdesigner/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/tarcisiobispouxdesigner/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 <Linkedin size={24} className="mr-3 w-7 h-7 sm:w-8 sm:h-8" />
                 <span>LinkedIn</span>
               </a>
             </Button>
           </div>
+          {/* Links extras, se houver */}
         </motion.div>
       </div>
     </section>

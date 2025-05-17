@@ -18,6 +18,15 @@ interface ProjectShowcaseProps {
   projects: ProjectDetails[];
 }
 
+const sectionTitles: Record<string, string> = {
+  overview: "Visão Geral",
+  discovery: "Descoberta",
+  solution: "Solução",
+  iteration: "Iteração",
+  outcomes: "Resultados",
+  insights: "Insights",
+};
+
 const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ projects }) => {
   const [activeProject, setActiveProject] = useState<number | null>(null);
 
@@ -85,23 +94,23 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ projects }) => {
                   >
                     <div className="mt-6 pt-6 border-t border-slate-100 space-y-6">
                       <div>
-                        <h4 className="font-medium text-portfolio-blue-dark mb-2">Overview</h4>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">{sectionTitles.overview}</h4>
                         <p className="text-portfolio-gray-dark">{project.overview}</p>
                       </div>
                       <div>
-                        <h4 className="font-medium text-portfolio-blue-dark mb-2">Discovery</h4>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">{sectionTitles.discovery}</h4>
                         <p className="text-portfolio-gray-dark">{project.discovery}</p>
                       </div>
                       <div>
-                        <h4 className="font-medium text-portfolio-blue-dark mb-2">Solution</h4>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">{sectionTitles.solution}</h4>
                         <p className="text-portfolio-gray-dark">{project.solution}</p>
                       </div>
                       <div>
-                        <h4 className="font-medium text-portfolio-blue-dark mb-2">Iteration</h4>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">{sectionTitles.iteration}</h4>
                         <p className="text-portfolio-gray-dark">{project.iteration}</p>
                       </div>
                       <div>
-                        <h4 className="font-medium text-portfolio-blue-dark mb-2">Outcomes</h4>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">{sectionTitles.outcomes}</h4>
                         <ul className="list-disc pl-5 text-portfolio-gray-dark">
                           {project.outcomes.map((item, idx) => (
                             <li key={idx}>{item}</li>
@@ -109,7 +118,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ projects }) => {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-portfolio-blue-dark mb-2">Insights</h4>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">{sectionTitles.insights}</h4>
                         <p className="text-portfolio-gray-dark">{project.insights}</p>
                       </div>
                     </div>

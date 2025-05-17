@@ -41,10 +41,10 @@ const Contact: React.FC = () => {
               className="flex items-center gap-3 w-full"
             >
               <div className="bg-white/20 p-2 rounded-lg">
-                <Mail size={24} />
+                <Mail size={28} className="w-8 h-8" />
               </div>
               <span className="font-medium">Enviar Email</span>
-              <ArrowRight size={18} className="ml-auto transition-transform group-hover:translate-x-1 duration-300" />
+              <ArrowRight size={28} className="ml-auto transition-transform group-hover:translate-x-1 duration-300 w-8 h-8" />
             </a>
           </Button>
           {/* Link Gmail discreto */}
@@ -71,10 +71,10 @@ const Contact: React.FC = () => {
               className="flex items-center gap-3 w-full"
             >
               <div className="bg-portfolio-blue/10 p-2 rounded-lg text-portfolio-blue group-hover:bg-white/20 group-hover:text-white transition-colors">
-                <Linkedin size={24} />
+                <Linkedin size={28} className="w-8 h-8" />
               </div>
               <span className="font-medium">Conectar no LinkedIn</span>
-              <ArrowRight size={18} className="ml-auto transition-transform group-hover:translate-x-1 duration-300" />
+              <ArrowRight size={28} className="ml-auto transition-transform group-hover:translate-x-1 duration-300 w-8 h-8" />
             </a>
           </Button>
           {/* Botão Download Currículo */}
@@ -90,10 +90,10 @@ const Contact: React.FC = () => {
               className="flex items-center gap-3 w-full"
             >
               <div className="bg-slate-200 p-2 rounded-lg">
-                <Download size={24} />
+                <Download size={28} className="w-8 h-8" />
               </div>
               <span className="font-medium">Download Currículo</span>
-              <ArrowRight size={18} className="ml-auto opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1 duration-300" />
+              <ArrowRight size={28} className="ml-auto opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1 duration-300 w-8 h-8" />
             </a>
           </Button>
         </motion.div>

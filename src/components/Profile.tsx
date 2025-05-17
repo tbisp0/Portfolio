@@ -76,9 +76,9 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
               asChild
             >
               <a href="https://wa.me/19990137380" target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="mr-3 w-6 h-6" />
+                <WhatsAppIcon className="mr-3 w-8 h-8" /> {/* Aumentado para w-8 h-8 */}
                 <span>Vamos Conversar</span>
-                <ArrowRight size={20} className="ml-2 transition-transform group-hover:translate-x-1 duration-300" />
+                <ArrowRight size={28} className="ml-2 transition-transform group-hover:translate-x-1 duration-300" /> {/* Aumentado para 28 */}
               </a>
             </Button>
             <Button
@@ -91,7 +91,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Download size={20} className="mr-3" />
+                <Download size={28} className="mr-3 w-8 h-8" />
                 <span>Download CV</span>
               </a>
             </Button>
@@ -101,7 +101,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
               asChild
             >
               <a href="https://www.linkedin.com/in/tarcisiobispouxdesigner/" target="_blank" rel="noopener noreferrer">
-                <Linkedin size={20} className="mr-3" />
+                <Linkedin size={28} className="mr-3 w-8 h-8" />
                 <span>LinkedIn</span>
               </a>
             </Button>

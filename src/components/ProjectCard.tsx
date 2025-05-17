@@ -27,7 +27,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="expand-button mb-2"
         >
           <span className="mr-2">Ver mais</span>
-          <ArrowRight size={16} className={`transition-transform duration-300 ${expanded ? 'rotate-90' : ''}`} />
+          <ArrowRight
+            size={28}
+            className={`w-8 h-8 transition-transform duration-300 ${expanded ? 'rotate-90' : ''}`}
+          />
         </button>
         {expanded && (
           <div className="mt-4 pl-5 border-l-2 border-portfolio-blue-light animate-fade-in space-y-4">

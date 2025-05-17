@@ -46,10 +46,10 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
                 border-2 border-transparent shadow-xl
               `}
             >
-              <img 
-                src="/images/tarcisio_bispo.png" // coloque o caminho da sua foto aqui
+              <img
+                src="/images/tarcisio_bispo.png"
                 alt="Foto de Tarcisio Bispo de Araujo"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-2xl"
               />
             </div>
           </div>

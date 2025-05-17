@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -40,64 +39,19 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="relative group w-64 h-64 mb-6">
-            <input
-              type="file"
-              id="profile-image"
-              className="sr-only"
-              accept="image/*"
-              onChange={handleImageChange}
-            />
-            <label 
-              htmlFor="profile-image" 
-              className="cursor-pointer block w-full h-full"
-            >
-              <div className={`
+          <div className="relative w-64 h-64 mb-6">
+            <div
+              className={`
                 w-full h-full rounded-2xl overflow-hidden 
-                border-2 transition-all duration-300
-                ${imagePreview 
-                  ? 'border-transparent shadow-xl' 
-                  : 'border-dashed border-portfolio-blue/40 hover:border-portfolio-blue hover:shadow-lg'
-                }
-              `}>
-                {imagePreview ? (
-                  <img 
-                    src={imagePreview} 
-                    alt="Profile Preview"
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 p-6 text-center">
-                    <Avatar className="w-24 h-24 mb-4 bg-slate-200 border border-slate-300">
-                      <AvatarFallback className="text-slate-400 text-4xl">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M12 15a6 6 0 100-12 6 6 0 000 12z"></path>
-                          <path d="M19 21a7 7 0 10-14 0"></path>
-                        </svg>
-                      </AvatarFallback>
-                    </Avatar>
-                    <p className="text-portfolio-gray-dark font-medium">
-                      Insira sua foto aqui
-                    </p>
-                    <p className="text-xs text-portfolio-gray-dark/70 mt-2">
-                      Recomendação: 800x800px
-                    </p>
-                  </div>
-                )}
-              </div>
-              
-              {/* Hover overlay */}
-              <div className={`
-                absolute inset-0 rounded-2xl flex items-center justify-center
-                bg-portfolio-blue/10 backdrop-blur-sm opacity-0 
-                group-hover:opacity-100 transition-opacity duration-300
-                ${imagePreview ? '' : 'hidden'}
-              `}>
-                <p className="text-white bg-portfolio-blue-dark/80 px-3 py-1 rounded-full text-sm">
-                  Alterar foto
-                </p>
-              </div>
-            </label>
+                border-2 border-transparent shadow-xl
+              `}
+            >
+              <img 
+                src="/images/tarcisio_bispo.png" // coloque o caminho da sua foto aqui
+                alt="Foto de Tarcisio Bispo de Araujo"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </motion.div>
         
@@ -132,9 +86,16 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
             <Button 
               variant="default" 
               className="group bg-portfolio-blue hover:bg-portfolio-blue-dark text-white transition-all duration-300 rounded-full pl-6 pr-5"
+              asChild
             >
-              <Download size={18} className="mr-2 transition-transform group-hover:translate-y-0.5 duration-300" />
-              <span>Download CV</span>
+              <a
+                href="https://drive.google.com/file/d/1NgQorqxUXbGKUaDruLfflxB4_6GhJyo8/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download size={18} className="mr-2 transition-transform group-hover:translate-y-0.5 duration-300" />
+                <span>Download CV</span>
+              </a>
             </Button>
             
             <Button 
@@ -154,7 +115,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
               className="group bg-transparent hover:bg-portfolio-blue/10 text-portfolio-blue transition-all duration-300 rounded-full"
               asChild
             >
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/tarcisiobispouxdesigner/" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={18} className="mr-2 transition-transform group-hover:scale-110 duration-300" />
                 <span>LinkedIn</span>
               </a>

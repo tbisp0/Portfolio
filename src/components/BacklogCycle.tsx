@@ -94,11 +94,6 @@ const BacklogCycle: React.FC = () => {
     }
   };
   
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
-
   return (
     <section>
       <motion.div
@@ -115,7 +110,7 @@ const BacklogCycle: React.FC = () => {
           Desafios reais enfrentados por stakeholders e soluções de UX aplicadas estrategicamente para resolver problemas de negócio.
         </p>
       </motion.div>
-      
+
       <motion.div
         className="grid gap-6 max-w-4xl mx-auto"
         variants={containerVariants}
@@ -129,54 +124,54 @@ const BacklogCycle: React.FC = () => {
               Nenhum item nesta página.
             </div>
           ) : (
-            paginatedItems.map((item, index) => (
-              <motion.div key={item.id} variants={itemVariants}>
-                <AccordionItem value={item.id} className="mb-6 overflow-hidden border-none">
-                  <div className="relative">
-                    {/* Decorative vertical line */}
-                    <div className="absolute left-8 top-0 h-full w-0.5 bg-portfolio-blue-light/20 z-0"></div>
-                    
-                    <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 relative z-10">
-                      <AccordionTrigger className="px-8 py-6 text-left font-medium text-portfolio-gray-dark hover:no-underline group">
-                        <div className="flex items-start gap-4">
-                          <div className="bg-portfolio-blue-light/10 text-portfolio-blue-dark p-3 rounded-lg flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                              <polyline points="22 4 12 14.01 9 11.01"/>
-                            </svg>
-                          </div>
-                          <div>
-                            <h3 className="font-semibold text-lg text-portfolio-blue-dark pr-8 group-hover:text-portfolio-blue transition-colors">
-                              {item.challenge}
-                            </h3>
-                          </div>
+            paginatedItems.map((item) => (
+              <AccordionItem value={item.id} key={item.id} className="mb-6 overflow-hidden border-none">
+                <div className="relative">
+                  {/* Decorative vertical line */}
+                  <div className="absolute left-8 top-0 h-full w-0.5 bg-portfolio-blue-light/20 z-0"></div>
+                  <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 relative z-10">
+                    <AccordionTrigger className="px-8 py-6 text-left font-medium text-portfolio-gray-dark hover:no-underline group">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-portfolio-blue-light/10 text-portfolio-blue-dark p-3 rounded-lg flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                          </svg>
                         </div>
-                      </AccordionTrigger>
-                      
-                      <AccordionContent>
-                        <div className="px-8 pb-6 pl-[4.5rem] space-y-6">
-                          <div className="space-y-4 border-l-2 border-portfolio-blue-light/30 pl-6 relative">
-                            <div className="absolute w-3 h-3 bg-portfolio-blue-light rounded-full -left-[7px] top-2"></div>
-                            <h4 className="font-semibold text-portfolio-blue">Solução</h4>
-                            <p className="text-portfolio-gray-dark">{item.solution}</p>
-                          </div>
-                          
-                          <div className="space-y-4 border-l-2 border-portfolio-blue/30 pl-6 relative">
-                            <div className="absolute w-3 h-3 bg-portfolio-blue rounded-full -left-[7px] top-2"></div>
-                            <h4 className="font-semibold text-portfolio-blue-dark">Resultado</h4>
-                            <p className="text-portfolio-gray-dark">{item.result}</p>
-                          </div>
-                          <div className="space-y-4 border-l-2 border-portfolio-blue/30 pl-6 relative">
+                        <div>
+                          <h3 className="font-semibold text-lg text-portfolio-blue-dark pr-8 group-hover:text-portfolio-blue transition-colors">
+                            {item.challenge}
+                          </h3>
+                        </div>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="px-8 pb-6 pl-[4.5rem] space-y-6"
+                      >
+                        <div className="space-y-4 border-l-2 border-portfolio-blue-light/30 pl-6 relative">
+                          <div className="absolute w-3 h-3 bg-portfolio-blue-light rounded-full -left-[7px] top-2"></div>
+                          <h4 className="font-semibold text-portfolio-blue">Solução</h4>
+                          <p className="text-portfolio-gray-dark">{item.solution}</p>
+                        </div>
+                        <div className="space-y-4 border-l-2 border-portfolio-blue/30 pl-6 relative">
+                          <div className="absolute w-3 h-3 bg-portfolio-blue rounded-full -left-[7px] top-2"></div>
+                          <h4 className="font-semibold text-portfolio-blue-dark">Resultado</h4>
+                          <p className="text-portfolio-gray-dark">{item.result}</p>
+                        </div>
+                        <div className="space-y-4 border-l-2 border-portfolio-blue/30 pl-6 relative">
                           <div className="absolute w-3 h-3 bg-portfolio-blue rounded-full -left-[7px] top-2"></div>
                           <h4 className="font-semibold text-portfolio-blue-dark">Nota</h4>
-                            <p className="text-portfolio-gray-dark">{item.note}</p>
-                          </div>
+                          <p className="text-portfolio-gray-dark">{item.note}</p>
                         </div>
-                      </AccordionContent>
-                    </div>
+                      </motion.div>
+                    </AccordionContent>
                   </div>
-                </AccordionItem>
-              </motion.div>
+                </div>
+              </AccordionItem>
             ))
           )}
         </Accordion>

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Download, Mail, Linkedin, ArrowRight } from 'lucide-react';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Download, Linkedin, ArrowRight } from 'lucide-react';
 
-// Ícone do WhatsApp (deixe aqui, antes do componente Profile)
+// Ícone do WhatsApp
 const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} viewBox="0 0 24 24" fill="none">
     <path

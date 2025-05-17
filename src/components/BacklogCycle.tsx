@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Accordion,
@@ -16,7 +15,11 @@ interface BacklogItem {
   note: string;
 }
 
+const ITEMS_PER_PAGE = 4;
+
 const BacklogCycle: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
   const backlogItems: BacklogItem[] = [
     {
       id: "backlog-1",
@@ -74,8 +77,12 @@ const BacklogCycle: React.FC = () => {
       result: "O tempo médio de leitura aumentou e houve queda no abandono de página.",
       note: "Pequenas decisões no texto têm grande impacto na experiência de leitura e compreensão.",
     }
-
   ];
+
+  const totalPages = Math.ceil(backlogItems.length / ITEMS_PER_PAGE);
+  const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIdx = startIdx + ITEMS_PER_PAGE;
+  const paginatedItems = backlogItems.slice(startIdx, endIdx);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -117,7 +124,7 @@ const BacklogCycle: React.FC = () => {
         viewport={{ once: true, margin: "-100px" }}
       >
         <Accordion type="single" collapsible className="w-full">
-          {backlogItems.map((item, index) => (
+          {paginatedItems.map((item, index) => (
             <motion.div key={item.id} variants={itemVariants}>
               <AccordionItem value={item.id} className="mb-6 overflow-hidden border-none">
                 <div className="relative">
@@ -167,6 +174,27 @@ const BacklogCycle: React.FC = () => {
             </motion.div>
           ))}
         </Accordion>
+
+        {/* Paginação */}
+        <div className="flex justify-center gap-4 mt-6">
+          <button
+            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+            className="px-4 py-2 rounded bg-portfolio-blue text-white disabled:opacity-50"
+          >
+            Anterior
+          </button>
+          <span className="self-center text-portfolio-blue-dark">
+            Página {currentPage} de {totalPages}
+          </span>
+          <button
+            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 rounded bg-portfolio-blue text-white disabled:opacity-50"
+          >
+            Próxima
+          </button>
+        </div>
       </motion.div>
     </section>
   );

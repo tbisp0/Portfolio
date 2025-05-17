@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Mail, Download, ArrowRight } from 'lucide-react';
@@ -36,8 +35,8 @@ const Contact: React.FC = () => {
             className="group bg-portfolio-blue hover:bg-portfolio-blue-dark transition-colors w-full py-6 h-auto text-base rounded-xl shadow-lg shadow-portfolio-blue/10 flex items-center justify-center gap-3"
             asChild
           >
-            <a 
-              href="mailto:tbisp0@hotmail.com" 
+            <a
+              href="mailto:tbisp0@hotmail.com"
               className="flex items-center gap-3"
             >
               <div className="bg-white/20 p-2 rounded-lg">
@@ -47,6 +46,15 @@ const Contact: React.FC = () => {
               <ArrowRight size={18} className="ml-auto transition-transform group-hover:translate-x-1 duration-300" />
             </a>
           </Button>
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=tbisp0@hotmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block mt-2 text-sm text-portfolio-blue underline"
+          >
+            Ou envie pelo Gmail
+          </a>
           
           <Button 
             variant="outline"
@@ -67,21 +75,23 @@ const Contact: React.FC = () => {
             </a>
           </Button>
           
-          <Button 
+          <Button
             variant="ghost"
             className="group bg-slate-50 hover:bg-slate-100 text-portfolio-gray-dark transition-colors w-full py-6 h-auto text-base rounded-xl flex items-center justify-center gap-3"
+            asChild
           >
-             <a 
-              href="https://drive.google.com/file/d/1NgQorqxUXbGKUaDruLfflxB4_6GhJyo8/view?usp=drive_link" 
-              target="_blank" 
+            <a
+              href="https://drive.google.com/file/d/1NgQorqxUXbGKUaDruLfflxB4_6GhJyo8/view?usp=drive_link"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3"
-            ></a>
-            <div className="bg-slate-200 p-2 rounded-lg">
-              <Download size={24} />
-            </div>
-            <span className="font-medium">Download Currículo</span>
-            <ArrowRight size={18} className="ml-auto opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1 duration-300" />
+            >
+              <div className="bg-slate-200 p-2 rounded-lg">
+                <Download size={24} />
+              </div>
+              <span className="font-medium">Download Currículo</span>
+              <Download size={18} className="ml-auto opacity-0 group-hover:opacity-100 transition-all group-hover:translate-y-1 duration-300" />
+            </a>
           </Button>
         </motion.div>
         

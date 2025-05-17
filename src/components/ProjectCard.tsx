@@ -59,7 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     </h4>
                     {section.key === "outcomes" ? (
                       <ul className="list-disc ml-5 paragraph">
-                        {section.value.split("\n").map((item, idx) =>
+                        {(Array.isArray(section.value) ? section.value : section.value.split("\n")).map((item, idx) =>
                           item.trim() ? <li key={idx}>{item}</li> : null
                         )}
                       </ul>

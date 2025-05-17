@@ -30,8 +30,8 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
   return (
-    <section className="min-h-screen flex flex-col justify-center py-10 sm:py-16 relative overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center justify-center w-full px-4 sm:px-8">
+    <section className="flex flex-col justify-center py-10 sm:py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start w-full px-4 sm:px-8">
         {/* Card da foto */}
         <motion.div
           className="lg:col-span-4 flex flex-col items-center lg:items-start"

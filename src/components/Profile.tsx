@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Download, Linkedin, ArrowRight } from 'lucide-react';
@@ -24,31 +24,11 @@ interface ProfileProps {
 }
 
 const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
-  const [imageFile, setImageFile] = useState<File | null>(null);
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
-  
-  // Handle image upload
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    
-    setImageFile(file);
-    
-    // Create preview URL
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setImagePreview(reader.result as string);
-    };
-    reader.readAsDataURL(file);
-  };
-
   return (
-    <section
-      className="min-h-screen flex flex-col justify-center py-16 relative overflow-hidden"
-    >
+    <section className="min-h-screen flex flex-col justify-center py-16 relative overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center justify-center">
         {/* Card da foto */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-4 flex flex-col items-center lg:items-start"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -57,7 +37,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
           <div className="flex justify-center items-center mb-6 lg:mb-0 w-full">
             <div className="w-64 h-64 rounded-full border-4 border-white shadow-2xl bg-white overflow-hidden hover:scale-105 transition-transform duration-300 mx-auto">
               <img
-                src="https://media.licdn.com/dms/image/v2/C4D03AQF2m1xt7vNIjw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1645042148360?e=1752710400&v=beta&t=DgGF5FPrL3O6qd3MzFMugxW7tfXxPosGHLtkPKIYNAI"
+                src="/images/tarcisio_bispo.png"
                 alt="Foto de Tarcisio Bispo de Araujo"
                 className="w-full h-full object-cover"
               />
@@ -66,7 +46,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
         </motion.div>
 
         {/* Bio Section */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-8 flex flex-col"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

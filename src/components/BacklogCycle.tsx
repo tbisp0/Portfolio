@@ -102,11 +102,11 @@ const BacklogCycle: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <h2 className="text-4xl font-bold text-portfolio-blue-dark mb-3 flex items-center justify-center gap-3">
-          <span className="text-3xl"></span> Ciclo de Backlogs Estratégicos
+        <h2 className="heading-2 mb-3 flex items-center justify-center gap-3 text-portfolio-blue-dark">
+          Ciclo de Backlogs Estratégicos
         </h2>
         <div className="h-1 w-20 bg-portfolio-blue mx-auto mb-6"></div>
-        <p className="text-portfolio-gray-dark mb-12 max-w-3xl mx-auto">
+        <p className="paragraph mb-12 max-w-3xl mx-auto text-portfolio-gray-dark">
           Desafios reais enfrentados por stakeholders e soluções de UX aplicadas estrategicamente para resolver problemas de negócio.
         </p>
       </motion.div>
@@ -139,7 +139,7 @@ const BacklogCycle: React.FC = () => {
                           </svg>
                         </div>
                         <div>
-                          <h3 className="font-semibold text-lg text-portfolio-blue-dark pr-8 group-hover:text-portfolio-blue transition-colors">
+                          <h3 className="heading-3 pr-8 group-hover:text-portfolio-blue transition-colors">
                             {item.challenge}
                           </h3>
                         </div>
@@ -154,18 +154,18 @@ const BacklogCycle: React.FC = () => {
                       >
                         <div className="space-y-4 border-l-2 border-portfolio-blue-light/30 pl-6 relative">
                           <div className="absolute w-3 h-3 bg-portfolio-blue-light rounded-full -left-[7px] top-2"></div>
-                          <h4 className="font-semibold text-portfolio-blue">Solução</h4>
-                          <p className="text-portfolio-gray-dark">{item.solution}</p>
+                          <h4 className="heading-3 text-portfolio-blue">Solução</h4>
+                          <p className="paragraph">{item.solution}</p>
                         </div>
                         <div className="space-y-4 border-l-2 border-portfolio-blue/30 pl-6 relative">
                           <div className="absolute w-3 h-3 bg-portfolio-blue rounded-full -left-[7px] top-2"></div>
-                          <h4 className="font-semibold text-portfolio-blue-dark">Resultado</h4>
-                          <p className="text-portfolio-gray-dark">{item.result}</p>
+                          <h4 className="heading-3 text-portfolio-blue-dark">Resultado</h4>
+                          <p className="paragraph">{item.result}</p>
                         </div>
                         <div className="space-y-4 border-l-2 border-portfolio-blue/30 pl-6 relative">
                           <div className="absolute w-3 h-3 bg-portfolio-blue rounded-full -left-[7px] top-2"></div>
-                          <h4 className="font-semibold text-portfolio-blue-dark">Nota</h4>
-                          <p className="text-portfolio-gray-dark">{item.note}</p>
+                          <h4 className="heading-3 text-portfolio-blue-dark">Nota</h4>
+                          <p className="paragraph">{item.note}</p>
                         </div>
                       </motion.div>
                     </AccordionContent>

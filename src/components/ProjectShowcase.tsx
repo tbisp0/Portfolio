@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Eye } from 'lucide-react';
@@ -9,6 +8,12 @@ interface ProjectDetails {
   imageUrl: string;
   summary: string;
   details: string[];
+  overview: string;
+  discovery: string;
+  solution: string;
+  iteration: string;
+  outcomes: string[];
+  insights: string;
 }
 
 interface ProjectShowcaseProps {
@@ -84,33 +89,34 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ projects }) => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="mt-6 pt-6 border-t border-slate-100">
-                      <div className="space-y-6">
-                        <div>
-                          <h4 className="font-medium text-portfolio-blue-dark mb-3">Visão Geral</h4>
-                          <p className="text-portfolio-gray-dark">
-                            Este projeto aborda desafios de {project.category.toLowerCase()} com foco em soluções que melhoram a experiência e impactam métricas de negócio.
-                          </p>
-                        </div>
-                        
-                        <div>
-                          <h4 className="font-medium text-portfolio-blue-dark mb-3">Processo de UX</h4>
-                          <ul className="space-y-2">
-                            {project.details.map((detail, idx) => (
-                              <li key={idx} className="text-portfolio-gray-dark flex items-start">
-                                <span className="text-portfolio-blue mr-2">•</span>
-                                {detail}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        <div>
-                          <h4 className="font-medium text-portfolio-blue-dark mb-3">Impacto & Resultados</h4>
-                          <p className="text-portfolio-gray-dark">
-                            A implementação destas estratégias gerou impacto mensurável na usabilidade e nos indicadores de negócio, resultando em melhor engajamento dos usuários.
-                          </p>
-                        </div>
+                    <div className="mt-6 pt-6 border-t border-slate-100 space-y-6">
+                      <div>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">🔹 Overview</h4>
+                        <p className="text-portfolio-gray-dark">{project.overview}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">🔍 Discovery</h4>
+                        <p className="text-portfolio-gray-dark">{project.discovery}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">💡 Solution</h4>
+                        <p className="text-portfolio-gray-dark">{project.solution}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">🔁 Iteration</h4>
+                        <p className="text-portfolio-gray-dark">{project.iteration}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">📈 Outcomes</h4>
+                        <ul className="list-disc pl-5 text-portfolio-gray-dark">
+                          {project.outcomes.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-portfolio-blue-dark mb-2">🔍 Insights</h4>
+                        <p className="text-portfolio-gray-dark">{project.insights}</p>
                       </div>
                     </div>
                   </motion.div>

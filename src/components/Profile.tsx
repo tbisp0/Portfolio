@@ -5,14 +5,19 @@ import { Download, Linkedin, ArrowRight } from 'lucide-react';
 
 // Ícone do WhatsApp
 const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} viewBox="0 0 24 24" fill="none">
+  <svg
+    {...props}
+    viewBox="0 0 32 32"
+    fill="none"
+    width={32}
+    height={32}
+    className={`w-8 h-8 ${props.className || ""}`}
+    aria-label="WhatsApp"
+  >
+    <circle cx="16" cy="16" r="16" fill="none" />
     <path
-      d="M16.7 13.6c-.3-.2-1.7-.8-2-1s-.5-.2-.7.1c-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.2-1.3-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.2-.3.3-.4.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3.1-.2 0-.4 0-.6s-.7-1.7-.9-2.3c-.2-.6-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.2-.7.7-.7 1.7 0 1 .7 2.1 1.1 2.6.4.5 2.1 2.8 5.1 3.7.7.2 1.2.3 1.6.2.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2z"
-      fill="white"
-    />
-    <path
-      d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.3C8.3 21.5 10.1 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.7 0-3.3-.4-4.7-1.2l-.3-.2-2.8.7.7-2.7-.2-.3C4.4 15.3 4 13.7 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"
-      fill="white"
+      d="M16 6.667a9.333 9.333 0 0 0-8.13 13.973l-1.07 3.12a1 1 0 0 0 1.263 1.263l3.12-1.07A9.333 9.333 0 1 0 16 6.667Zm0 16a6.667 6.667 0 0 1-3.413-.94l-.24-.14-2.08.713.713-2.08-.14-.24A6.667 6.667 0 1 1 16 22.667Zm3.36-4.36c-.187-.093-1.107-.547-1.277-.607-.17-.06-.293-.093-.417.093-.123.187-.48.607-.587.733-.107.127-.217.14-.403.047-.187-.093-.79-.29-1.504-.924-.556-.496-.93-1.11-1.04-1.297-.11-.187-.012-.288.082-.38.084-.083.187-.217.28-.33.093-.113.124-.187.187-.31.062-.124.031-.233-.015-.327-.047-.093-.417-1.007-.573-1.38-.15-.36-.303-.312-.417-.318-.107-.007-.233-.009-.36-.009-.124 0-.327.047-.5.233-.17.187-.66.646-.66 1.577 0 .93.676 1.83.77 1.957.093.124 1.33 2.04 3.23 2.78.452.155.805.247 1.08.316.454.108.87.093 1.197.057.366-.043 1.107-.453 1.263-.89.156-.437.156-.812.11-.89-.047-.078-.17-.124-.357-.217Z"
+      fill="currentColor"
     />
   </svg>
 );
@@ -52,7 +57,16 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-3 leading-tight" style={{ color: "var(--color-primary)" }}>
+          <h1
+            className="
+              font-bold mb-3 leading-tight
+              text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+              whitespace-nowrap
+              max-w-full
+              overflow-x-auto
+            "
+            style={{ color: "var(--color-primary)" }}
+          >
             {name}
           </h1>
           <motion.div
@@ -62,10 +76,20 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
             className="h-1.5 mb-6 rounded"
             style={{ background: "var(--color-secondary)" }}
           ></motion.div>
-          <h2 className="text-2xl md:text-3xl mb-8 font-semibold" style={{ color: "var(--color-secondary)" }}>
+          <h2
+            className="font-semibold mb-8
+              text-lg sm:text-xl md:text-2xl lg:text-3xl
+              max-w-full"
+            style={{ color: "var(--color-secondary)" }}
+          >
             {title}
           </h2>
-          <p className="leading-relaxed mb-10 max-w-3xl text-lg md:text-xl" style={{ color: "var(--color-muted)" }}>
+          <p
+            className="leading-relaxed mb-10 max-w-3xl
+              text-base sm:text-lg md:text-xl
+              max-w-full"
+            style={{ color: "var(--color-muted)" }}
+          >
             {bio}
           </p>
           {/* Botões */}
@@ -76,9 +100,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
               asChild
             >
               <a href="https://wa.me/19990137380" target="_blank" rel="noopener noreferrer">
-                <div className="bg-white/20 p-2 rounded-lg mr-3 flex items-center justify-center">
-                  <WhatsAppIcon className="w-8 h-8" />
-                </div>
+                <WhatsAppIcon className="mr-3 w-8 h-8" />
                 <span>Vamos Conversar</span>
                 <ArrowRight size={28} className="ml-2 transition-transform group-hover:translate-x-1 duration-300" />
               </a>

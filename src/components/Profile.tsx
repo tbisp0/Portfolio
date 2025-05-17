@@ -97,31 +97,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
                 <span>Download CV</span>
               </a>
             </Button>
-            
-            <Button 
-              variant="outline" 
-              className="group border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue hover:text-white transition-all duration-300 rounded-full pl-6 pr-5"
-              asChild
-            >
-              <a href="mailto:contato@tarcisiobispo.com">
-                <Mail size={18} className="mr-2 transition-transform group-hover:translate-y-0.5 duration-300" />
-                <span>Vamos Conversar</span>
-                <ArrowRight size={16} className="ml-1.5 transition-transform group-hover:translate-x-1 duration-300" />
-              </a>
-            </Button>
-            
-            <Button 
-              variant="ghost" 
-              className="group bg-transparent hover:bg-portfolio-blue/10 text-portfolio-blue transition-all duration-300 rounded-full"
-              asChild
-            >
-              <a href="https://www.linkedin.com/in/tarcisiobispouxdesigner/" target="_blank" rel="noopener noreferrer">
-                <Linkedin size={18} className="mr-2 transition-transform group-hover:scale-110 duration-300" />
-                <span>LinkedIn</span>
-              </a>
-            </Button>
 
-            {/* WhatsApp Button - Adicionado manualmente */}
             <Button 
               variant="outline" 
               className="group border-portfolio-blue text-portfolio-blue hover:bg-portfolio-blue hover:text-white transition-all duration-300 rounded-full pl-6 pr-5"
@@ -131,6 +107,17 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
                 <WhatsAppIcon className="mr-2 w-5 h-5" />
                 <span>Vamos Conversar</span>
                 <ArrowRight size={16} className="ml-1.5 transition-transform group-hover:translate-x-1 duration-300" />
+              </a>
+            </Button>
+
+            <Button 
+              variant="ghost" 
+              className="group bg-transparent hover:bg-portfolio-blue/10 text-portfolio-blue transition-all duration-300 rounded-full"
+              asChild
+            >
+              <a href="https://www.linkedin.com/in/tarcisiobispouxdesigner/" target="_blank" rel="noopener noreferrer">
+                <Linkedin size={18} className="mr-2 transition-transform group-hover:scale-110 duration-300" />
+                <span>LinkedIn</span>
               </a>
             </Button>
           </div>

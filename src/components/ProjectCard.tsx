@@ -18,10 +18,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="project-card p-6 mb-8 animate-fade-in">
+    <div className="project-card p-6 mb-8 animate-fade-in" style={{ background: "var(--color-card-bg)" }}>
       <div className="flex flex-col">
-        <h3 className="text-xl font-semibold text-portfolio-blue-dark">{title}</h3>
-        <span className="text-sm text-portfolio-gray-dark mb-4">{category}</span>
+        <h3 className="text-xl font-semibold" style={{ color: "var(--color-primary)" }}>{title}</h3>
+        <span className="text-sm" style={{ color: "var(--color-muted)" }}>{category}</span>
         <button 
           onClick={() => setExpanded(!expanded)} 
           className="expand-button mb-2"

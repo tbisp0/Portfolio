@@ -52,19 +52,20 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-portfolio-gray-dark mb-3 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-bold mb-3 leading-tight" style={{ color: "var(--color-primary)" }}>
             {name}
           </h1>
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "120px" }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="h-1.5 bg-portfolio-blue mb-6 rounded"
+            className="h-1.5 mb-6 rounded"
+            style={{ background: "var(--color-secondary)" }}
           ></motion.div>
-          <h2 className="text-2xl md:text-3xl text-portfolio-blue mb-8 font-semibold">
+          <h2 className="text-2xl md:text-3xl mb-8 font-semibold" style={{ color: "var(--color-secondary)" }}>
             {title}
           </h2>
-          <p className="text-portfolio-gray-dark leading-relaxed mb-10 max-w-3xl text-lg md:text-xl">
+          <p className="leading-relaxed mb-10 max-w-3xl text-lg md:text-xl" style={{ color: "var(--color-muted)" }}>
             {bio}
           </p>
           {/* Botões */}

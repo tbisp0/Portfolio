@@ -76,9 +76,11 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
               asChild
             >
               <a href="https://wa.me/19990137380" target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="mr-3 w-8 h-8" /> {/* Aumentado para w-8 h-8 */}
+                <div className="bg-white/20 p-2 rounded-lg mr-3 flex items-center justify-center">
+                  <WhatsAppIcon className="w-8 h-8" />
+                </div>
                 <span>Vamos Conversar</span>
-                <ArrowRight size={28} className="ml-2 transition-transform group-hover:translate-x-1 duration-300" /> {/* Aumentado para 28 */}
+                <ArrowRight size={28} className="ml-2 transition-transform group-hover:translate-x-1 duration-300" />
               </a>
             </Button>
             <Button

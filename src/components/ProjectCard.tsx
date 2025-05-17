@@ -12,6 +12,15 @@ interface ProjectCardProps {
   insights: string;
 }
 
+const sectionTitles: Record<string, string> = {
+  overview: "Visão Geral",
+  discovery: "Descoberta",
+  solution: "Solução",
+  iteration: "Iteração",
+  outcomes: "Resultados",
+  insights: "Insights",
+};
+
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title, category, overview, discovery, solution, iteration, outcomes, insights
 }) => {
@@ -34,32 +43,34 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </button>
         {expanded && (
           <div className="mt-4 pl-5 border-l-2 border-portfolio-blue-light animate-fade-in space-y-4">
-            <div>
-              <h4 className="font-medium">Overview</h4>
-              <p>{overview}</p>
-            </div>
-            <div>
-              <h4 className="font-medium">Discovery</h4>
-              <p>{discovery}</p>
-            </div>
-            <div>
-              <h4 className="font-medium">Solution</h4>
-              <p>{solution}</p>
-            </div>
-            <div>
-              <h4 className="font-medium">Iteration</h4>
-              <p>{iteration}</p>
-            </div>
-            <div>
-              <h4 className="font-medium">Outcomes</h4>
-              <ul className="list-disc pl-5">
-                {outcomes && outcomes.map((item, idx) => <li key={idx}>{item}</li>)}
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium">Insights</h4>
-              <p>{insights}</p>
-            </div>
+            {[
+              { key: "overview", value: overview },
+              { key: "discovery", value: discovery },
+              { key: "solution", value: solution },
+              { key: "iteration", value: iteration },
+              { key: "outcomes", value: outcomes },
+              { key: "insights", value: insights },
+            ].map(
+              (section) =>
+                section.value && (
+                  <div key={section.key}>
+                    <h4 className="heading-3" style={{ color: "var(--color-secondary)" }}>
+                      {sectionTitles[section.key]}
+                    </h4>
+                    {section.key === "outcomes" ? (
+                      <ul className="list-disc ml-5 paragraph">
+                        {section.value.split("\n").map((item, idx) =>
+                          item.trim() ? <li key={idx}>{item}</li> : null
+                        )}
+                      </ul>
+                    ) : (
+                      <p className="paragraph" style={{ color: "var(--color-muted)" }}>
+                        {section.value}
+                      </p>
+                    )}
+                  </div>
+                )
+            )}
           </div>
         )}
       </div>

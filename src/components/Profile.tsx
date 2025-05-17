@@ -30,8 +30,8 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
   return (
-    <section className="min-h-screen flex flex-col justify-center py-16 relative overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center justify-center">
+    <section className="min-h-screen flex flex-col justify-center py-10 sm:py-16 relative overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center justify-center w-full px-4 sm:px-8">
         {/* Card da foto */}
         <motion.div
           className="lg:col-span-4 flex flex-col items-center lg:items-start"
@@ -40,7 +40,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
           transition={{ duration: 0.8 }}
         >
           <div className="flex justify-center items-center mb-6 lg:mb-0 w-full">
-            <div className="w-64 h-64 rounded-full border-4 border-white shadow-2xl bg-white overflow-hidden hover:scale-105 transition-transform duration-300 mx-auto">
+            <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full border-4 border-white shadow-2xl bg-white overflow-hidden hover:scale-105 transition-transform duration-300 mx-auto">
               <img
                 src="/portfolio/images/tarcisio_bispo.png"
                 alt="Foto de Tarcisio Bispo de Araujo"
@@ -58,13 +58,7 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h1
-            className="
-              font-bold mb-3 leading-tight
-              text-3xl sm:text-4xl md:text-5xl lg:text-6xl
-              whitespace-nowrap
-              max-w-full
-              overflow-x-auto
-            "
+            className="heading-1"
             style={{ color: "var(--color-primary)" }}
           >
             {name}
@@ -77,37 +71,33 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
             style={{ background: "var(--color-secondary)" }}
           ></motion.div>
           <h2
-            className="font-semibold mb-8
-              text-lg sm:text-xl md:text-2xl lg:text-3xl
-              max-w-full"
+            className="heading-2 mb-8"
             style={{ color: "var(--color-secondary)" }}
           >
             {title}
           </h2>
           <p
-            className="leading-relaxed mb-10 max-w-3xl
-              text-base sm:text-lg md:text-xl
-              max-w-full"
+            className="paragraph mb-10"
             style={{ color: "var(--color-muted)" }}
           >
             {bio}
           </p>
           {/* Botões */}
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-4 sm:gap-6">
             <Button
               style={{ backgroundColor: "#25D366" }}
-              className="group text-white hover:bg-[#1ebe5d] transition-all duration-300 rounded-full pl-7 pr-6 py-4 text-lg"
+              className="group text-white hover:bg-[#1ebe5d] transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg"
               asChild
             >
               <a href="https://wa.me/19990137380" target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="mr-3 w-8 h-8" />
+                <WhatsAppIcon className="mr-3 w-7 h-7 sm:w-8 sm:h-8" />
                 <span>Vamos Conversar</span>
-                <ArrowRight size={28} className="ml-2 transition-transform group-hover:translate-x-1 duration-300" />
+                <ArrowRight size={24} className="ml-2 sm:size-7 transition-transform group-hover:translate-x-1 duration-300" />
               </a>
             </Button>
             <Button
               variant="default"
-              className="group bg-portfolio-blue hover:bg-portfolio-blue-dark text-white transition-all duration-300 rounded-full pl-7 pr-6 py-4 text-lg"
+              className="group bg-portfolio-blue hover:bg-portfolio-blue-dark text-white transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg"
               asChild
             >
               <a
@@ -115,17 +105,17 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Download size={28} className="mr-3 w-8 h-8" />
+                <Download size={24} className="mr-3 w-7 h-7 sm:w-8 sm:h-8" />
                 <span>Download CV</span>
               </a>
             </Button>
             <Button
               variant="ghost"
-              className="group bg-transparent hover:bg-portfolio-blue/10 text-portfolio-blue transition-all duration-300 rounded-full pl-7 pr-6 py-4 text-lg"
+              className="group bg-transparent hover:bg-portfolio-blue/10 text-portfolio-blue transition-all duration-300 rounded-full pl-5 pr-5 sm:pl-7 sm:pr-6 py-3 sm:py-4 text-base sm:text-lg"
               asChild
             >
               <a href="https://www.linkedin.com/in/tarcisiobispouxdesigner/" target="_blank" rel="noopener noreferrer">
-                <Linkedin size={28} className="mr-3 w-8 h-8" />
+                <Linkedin size={24} className="mr-3 w-7 h-7 sm:w-8 sm:h-8" />
                 <span>LinkedIn</span>
               </a>
             </Button>

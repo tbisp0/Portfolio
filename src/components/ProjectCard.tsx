@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           onClick={() => setExpanded(!expanded)} 
           className="expand-button mb-2"
         >
-          <span className="mr-2">🔎 Ver mais</span> 
+          <span className="mr-2">🔎 Ver mais</span>
           <ArrowRight size={16} className={`transition-transform duration-300 ${expanded ? 'rotate-90' : ''}`} />
         </button>
         {expanded && (
@@ -50,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <div>
               <h4 className="font-medium">📈 Outcomes</h4>
               <ul className="list-disc pl-5">
-                {outcomes.map((item, idx) => <li key={idx}>{item}</li>)}
+                {outcomes && outcomes.map((item, idx) => <li key={idx}>{item}</li>)}
               </ul>
             </div>
             <div>

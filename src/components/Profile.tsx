@@ -55,12 +55,14 @@ const Profile: React.FC<ProfileProps> = ({ name, title, bio }) => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="relative w-64 h-64 mb-6 shadow-2xl rounded-2xl border border-slate-200 bg-white hover:scale-105 transition-transform duration-300">
-            <img
-              src="images/tarcisio_bispo.png"
-              alt="Foto de Tarcisio Bispo de Araujo"
-              className="w-full h-full object-contain rounded-2xl bg-white"
-            />
+          <div className="flex justify-center items-center mb-6">
+            <div className="w-64 h-64 rounded-full border-4 border-white shadow-2xl bg-white overflow-hidden hover:scale-105 transition-transform duration-300">
+              <img
+                src="/images/tarcisio_bispo.png"
+                alt="Foto de Tarcisio Bispo de Araujo"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </motion.div>
 
